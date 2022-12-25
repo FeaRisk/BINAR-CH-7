@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { faStar as Rating } from "@fortawesome/free-solid-svg-icons";
 import { faClipboard as ClipBoard } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NoImgAvalible } from "../../asset/index_image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "swiper/css";
@@ -40,7 +41,7 @@ const Swipers = (props) => {
                       src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`}
                     />
                     <div className="movie-info">
-                      <h2>{result.original_title}</h2>
+                      <h5>{result.original_title}</h5>
                       <span>
                         <FontAwesomeIcon
                           style={{ color: "gold" }}
@@ -103,16 +104,26 @@ const Swipers = (props) => {
             actor.map((result) => {
               return (
                 <SwiperSlide key={result.id}>
-                  <div className="movie-card">
-                    <img
-                      className="image-card"
-                      src={`https://image.tmdb.org/t/p/w500/${result.profile_path}`}
-                    />
-                    <div className="movie-info">
-                      <h2>{result.name}</h2>
-                      <p>{result.character}</p>
+                  {result.profile_path !== null ? (
+                    <div className="movie-card">
+                      <img
+                        className="image-card"
+                        src={`https://image.tmdb.org/t/p/w500/${result.profile_path}`}
+                      />
+                      <div className="movie-info">
+                        <h2>{result.name}</h2>
+                        <p>{result.character}</p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="movie-card">
+                      <img className="image-card" src={NoImgAvalible} />
+                      <div className="movie-info">
+                        <h2>{result.name}</h2>
+                        <p>{result.character}</p>
+                      </div>
+                    </div>
+                  )}
                 </SwiperSlide>
               );
             })}

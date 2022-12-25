@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCube } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookSquare as FB,
   faInstagram as IG,
@@ -10,7 +9,6 @@ import {
   faYoutube as YT,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
-import { LogoIcon } from "../../asset/index_image";
 
 function Footer() {
   return (
