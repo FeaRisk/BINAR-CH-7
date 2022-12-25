@@ -6,14 +6,17 @@ import Footer from './component/footer/footer';
 import NavBar from './component/nav/navbar';
 import Search from './component/search/search';
 import './index.css'
+import { store } from './app/store';
 import AllMovies from './page/all';
 import Detail from './page/details';
 import Home from './page/home/home';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId='67751698887-k04h2k8e4sirhvgj6chtevcb0cqok6q8.apps.googleusercontent.com'>
+    <Provider store={store}>
     <BrowserRouter>
     <NavBar/>
     <Routes>
@@ -25,6 +28,7 @@ root.render(
     </Routes>
     <Footer/>
     </BrowserRouter>
+    </Provider>
     </GoogleOAuthProvider>
 
   </React.StrictMode>
