@@ -31,30 +31,6 @@ footer {
     color: #17AAEA;
 }
 
-.footerList{
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 0;
-    justify-content: center;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.footerList a {
-    color: black;
-    padding: 1rem 0.5rem;
-    font-size: 1.15rem;
-    display: block;
-    text-decoration: none;
-    
-}
-
-.footerList a:hover {
-    color: #17AAEA;
-}
-
 .copyrightSign {
     display: flex;
     flex-wrap: wrap;
@@ -63,10 +39,10 @@ footer {
     gap: 0.5rem;
 }
 
-.copyrightSign a {
+.copyrightSign {
     color: #4d4d4d;
 }
 
-.copyrightSign a:hover {
+.copyrightSign:hover {
     color: #737373;
 }

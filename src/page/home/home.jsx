@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { imgSlide1, imgSlide2, imgSlide3 } from "../../asset/index_image";
 import Swipers from "../../component/swiper/swiper";
-import {
-  Carousel,
-  Button,
-  CarouselItem,
-  Container,
-  Modal,
-} from "react-bootstrap";
+import { Carousel, Button, Container, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay as PlayBtn } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRight as ArrowRight } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "./home.css";
-import NavBar from "../../component/nav/navbar";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

@@ -259,7 +259,7 @@ const NavBar = () => {
                     />
                     {email.match(emailRegex) === null ? (
                       <span style={{ color: "red" }}>
-                        Please Input a Valid Email
+                        *Please Input a Valid Email
                       </span>
                     ) : (
                       ""

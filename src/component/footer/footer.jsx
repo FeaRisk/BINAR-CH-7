@@ -41,17 +41,6 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <ul className="footerList">
-          <li>
-            <a href="/">Condition of Use</a>
-          </li>
-          <li>
-            <a href="/">Privacy & Policy</a>
-          </li>
-          <li>
-            <a href="/">Press Room</a>
-          </li>
-        </ul>
         <div className="copyrightSign">© 2022 Copyright by Kris Adiwinata</div>
       </footer>
     </Container>
