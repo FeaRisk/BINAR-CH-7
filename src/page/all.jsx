@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
-import ReactPaginate from "react-paginate";
 import { background1 } from "../asset/index_image";
 import "bootstrap/dist/css/bootstrap.min.css";
 

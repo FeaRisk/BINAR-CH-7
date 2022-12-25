@@ -1,66 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { imgSlide1, imgSlide2, imgSlide3 } from "../../asset/index_image";
+import { useSelector, useDispatch } from "react-redux";
+import { getPopular, getUpcoming } from "../../reducer/movieSlice";
+import { getGenres } from "../../reducer/genreSlice";
 import Swipers from "../../component/swiper/swiper";
 import { Carousel, Button, Container, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay as PlayBtn } from "@fortawesome/free-regular-svg-icons";
 import { faArrowRight as ArrowRight } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const apiv3 = "a2940e397cdc84f3a8a5619d3d65b9c5";
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [popular, setPopular] = useState([]);
-  const [upcoming, setUpComing] = useState([]);
-  const [category, setCategory] = useState([]);
+
+  const genres = useSelector((state) => state.genres);
+  const { popular, upcoming } = useSelector((state) => state.movies);
+  //   const [popular, setPopular] = useState([]);
+  //   const [upcoming, setUpComing] = useState([]);
 
   const [show, setShow] = useState(false);
 
   const closeModal = () => setShow(false);
   const showModal = () => setShow(true);
 
-  const loadData = async () => {
-    try {
-      await axios
-        .get(`https://api.themoviedb.org/3/movie/popular`, {
-          params: {
-            api_key: apiv3,
-          },
-        })
-        .then((response) => {
-          setPopular(response.data.results);
-        });
-
-      await axios
-        .get(`https://api.themoviedb.org/3/movie/upcoming`, {
-          params: {
-            api_key: apiv3,
-          },
-        })
-        .then((response) => {
-          setUpComing(response.data.results);
-        });
-
-      await axios
-        .get(`https://api.themoviedb.org/3/genre/movie/list`, {
-          params: {
-            api_key: apiv3,
-          },
-        })
-        .then((response) => {
-          setCategory(response.data.genres);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    loadData();
-  }, []);
+    dispatch(getPopular());
+    dispatch(getUpcoming());
+    dispatch(getGenres());
+  }, [dispatch]);
 
   return (
     <div>
@@ -203,7 +172,7 @@ const Home = () => {
               See All Movies <FontAwesomeIcon icon={ArrowRight} />
             </p>
           </div>
-          <Swipers cate={category} on />
+          <Swipers cate={genres.genres} on />
           <br />
           <br />
           <Swipers movie={upcoming} />
