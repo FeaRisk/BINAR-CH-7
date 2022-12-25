@@ -5,10 +5,10 @@ import { faStar as Rating } from "@fortawesome/free-solid-svg-icons";
 import { faCirclePlay as PlayBtn } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Carousel, Container, Modal } from "react-bootstrap";
-import Swipers from "../../component/Swipers/swipers";
+import Swipers from "../component/swiper/swiper";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import NavBar from "../../component/Navbar/navbar";
+import NavBar from "../component/nav/navbar";
 
 const Detail = () => {
   const { id } = useParams();

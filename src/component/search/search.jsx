@@ -5,7 +5,7 @@ import { Carousel, Button, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as Rating } from "@fortawesome/free-solid-svg-icons";
 import { background1 } from "../../asset/index_image";
-import Swipers from "../Swipers/swipers";
+import Swipers from "../swiper/swiper";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./search.css";

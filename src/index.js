@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google'
-import Footer from './component/Footer/footer';
-import NavBar from './component/Navbar/navbar';
-import Search from './component/Search/search';
+import Footer from './component/footer/footer';
+import NavBar from './component/nav/navbar';
+import Search from './component/search/search';
 import './index.css'
-import AllMovies from './page/allMovie/all';
-import Detail from './page/Detail/detail';
-import Home from './page/Home/home';
+import AllMovies from './page/all';
+import Detail from './page/details';
+import Home from './page/home/home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

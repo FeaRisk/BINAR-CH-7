@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { imgSlide1, imgSlide2, imgSlide3 } from "../../asset/index_image";
-import Swipers from "../../component/Swipers/swipers";
+import Swipers from "../../component/swiper/swiper";
 import {
   Carousel,
   Button,

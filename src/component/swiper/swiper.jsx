@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./swipers.css";
+import "./swiper.css";
 
 const Swipers = (props) => {
   const navigate = useNavigate();
